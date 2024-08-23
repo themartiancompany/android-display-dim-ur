@@ -1,0 +1,15 @@
+pkgbase = android-display-dim
+	pkgdesc = Android application utilities.
+	pkgver = 0.0.0.0.0.0.0.0.0.0.0.0.0.1.1
+	pkgrel = 1
+	url = https://github.com/themartiancompany/android-display-dim
+	arch = any
+	license = AGPL3
+	checkdepends = shellcheck
+	makedepends = make
+	depends = android-utils
+	source = android-display-dim-910cc24be60717a8a08c71634258df418556158b.zip::https://github.com/themartiancompany/android-display-dim/archive/910cc24be60717a8a08c71634258df418556158b.zip
+	validpgpkeys = 97E989E6CF1D2C7F7A41FF9F95684DBE23D6A3E9
+	sha256sums = d15f0bab4f4a133e9c8cd93042d0a5e74807b12ce1eebacec7f36db36c2a7339
+
+pkgname = android-display-dim
