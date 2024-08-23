@@ -8,8 +8,8 @@ pkgbase = android-display-dim
 	checkdepends = shellcheck
 	makedepends = make
 	depends = android-utils
-	source = android-display-dim-910cc24be60717a8a08c71634258df418556158b.zip::https://github.com/themartiancompany/android-display-dim/archive/910cc24be60717a8a08c71634258df418556158b.zip
+	source = android-display-dim-a92db2f7ba81c4ae5c5f0ffd0c5702ab544c098b.zip::https://github.com/themartiancompany/android-display-dim/archive/a92db2f7ba81c4ae5c5f0ffd0c5702ab544c098b.zip
 	validpgpkeys = 97E989E6CF1D2C7F7A41FF9F95684DBE23D6A3E9
-	sha256sums = d15f0bab4f4a133e9c8cd93042d0a5e74807b12ce1eebacec7f36db36c2a7339
+	sha256sums = 3b9c0d50d208dca27a26bb14ea56c276b48d45f00f387b35a3698960b1e30ff0
 
 pkgname = android-display-dim
