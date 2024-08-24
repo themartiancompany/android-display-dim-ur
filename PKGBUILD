@@ -10,7 +10,7 @@ pkgver=0.0.0.0.0.0.0.0.0.0.0.0.0.1.1
 _commit="a92db2f7ba81c4ae5c5f0ffd0c5702ab544c098b"
 pkgrel=1
 _pkgdesc=(
-  "Android application utilities."
+  "Android display dim."
 )
 pkgdesc="${_pkgdesc[*]}"
 arch=(
@@ -23,7 +23,8 @@ license=(
   AGPL3
 )
 depends=(
-  "android-utils"
+  "bbrightnessctl"
+  "displayctl"
 )
 _os="$( \
   uname \
