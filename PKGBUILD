@@ -34,7 +34,11 @@
 
 _offline="false"
 _git="false"
-pkgname=android-display-dim
+_pkg=android-display-dim
+pkgbase="${_pkg}"
+pkgname=(
+  "${_pkg}"
+)
 pkgver=0.0.0.0.0.0.0.0.0.0.0.0.0.1.1
 _commit="a92db2f7ba81c4ae5c5f0ffd0c5702ab544c098b"
 pkgrel=1
@@ -43,13 +47,13 @@ _pkgdesc=(
 )
 pkgdesc="${_pkgdesc[*]}"
 arch=(
-  any
+  "any"
 )
 _http="https://github.com"
 _ns="themartiancompany"
 url="${_http}/${_ns}/${pkgname}"
 license=(
-  AGPL3
+  "AGPL3"
 )
 depends=(
   "bbrightnessctl"
@@ -58,15 +62,17 @@ depends=(
 _os="$( \
   uname \
     -o)"
-[[ "${_os}" != "GNU/Linux" ]] && \
-[[ "${_os}" == "Android" ]] && \
+if [[ "${_os}" != "GNU/Linux" ]] && \
+   [[ "${_os}" == "Android" ]]; then
   depends+=(
   )
+fi
 optdepends=(
 )
-[[ "${_os}" == 'Android' ]] && \
+if [[ "${_os}" == 'Android' ]]; then
   optdepends+=(
   )
+fi
 makedepends=(
   "make"
 )
@@ -79,32 +85,34 @@ _url="${url}"
 _tag="${_commit}"
 _tag_name="commit"
 _tarname="${pkgname}-${_tag}"
-[[ "${_offline}" == "true" ]] && \
+if [[ "${_offline}" == "true" ]]; then
   url="file://${HOME}/${pkgname}"
-[[ "${_git}" == true ]] && \
+fi
+if [[ "${_git}" == true ]]; then
   makedepends+=(
     "git"
-  ) && \
+  )
   source+=(
     "${_tarname}::git+${_url}#${_tag_name}=${_tag}?signed"
-  ) && \
+  )
   sha256sums+=(
     SKIP
   )
-[[ "${_git}" == false ]] && \
+elif [[ "${_git}" == false ]]; then
   if [[ "${_tag_name}" == 'pkgver' ]]; then
     _tar="${_tarname}.tar.gz::${_url}/archive/refs/tags/${_tag}.tar.gz"
     _sum="d4f4179c6e4ce1702c5fe6af132669e8ec4d0378428f69518f2926b969663a91"
   elif [[ "${_tag_name}" == "commit" ]]; then
     _tar="${_tarname}.zip::${_url}/archive/${_commit}.zip"
     _sum="3b9c0d50d208dca27a26bb14ea56c276b48d45f00f387b35a3698960b1e30ff0"
-  fi && \
-    source+=(
-      "${_tar}"
-    ) && \
-    sha256sums+=(
-      "${_sum}"
-    )
+  fi
+  source+=(
+    "${_tar}"
+  ) && \
+  sha256sums+=(
+    "${_sum}"
+  )
+fi
 validpgpkeys=(
   # Truocolo <truocolo@aol.com>
   '97E989E6CF1D2C7F7A41FF9F95684DBE23D6A3E9'
