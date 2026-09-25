@@ -41,7 +41,7 @@ pkgname=(
 )
 pkgver=0.0.0.0.0.0.0.0.0.0.0.0.0.1.1
 _commit="a92db2f7ba81c4ae5c5f0ffd0c5702ab544c098b"
-pkgrel=2
+pkgrel=3
 _pkgdesc=(
   "Android display dim."
 )
